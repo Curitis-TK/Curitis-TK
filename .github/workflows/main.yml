@@ -16,8 +16,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          directory: metrics
-          filename: metrics.svg
+          filename: metrics/metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           output_action: commit
           committer_branch: metrics-renders
