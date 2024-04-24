@@ -14,22 +14,20 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           output_action: gist
           committer_gist: ${{ secrets.GIST }}
-      - uses: lowlighter/metrics@latest
+      - name: WakaTime
+        uses: lowlighter/metrics@latest
         with:
-          filename: wakapi.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          filename: wakaTime.svg
           output_action: gist
           committer_gist: ${{ secrets.GIST }}
           plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
-          plugin_wakatime_days: 7
-          plugin_wakatime_sections: time, projects, projects-graphs
-          plugin_wakatime_limit: 4
           plugin_wakatime_url: http://wakapi.aeroz.cn
-          #plugin_wakatime_user: .user.login
