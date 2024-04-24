@@ -20,5 +20,3 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           output_action: gist
           committer_gist: ${{ secrets.GIST }}
-          committer_branch: metrics-renders
-          committer_message: "chore: update metrics"
