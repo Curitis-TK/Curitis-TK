@@ -16,8 +16,9 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics/metrics.svg
+          filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          output_action: commit
+          output_action: gist
+          committer_gist: ${{ secrets.GIST }}
           committer_branch: metrics-renders
           committer_message: "chore: update metrics"
